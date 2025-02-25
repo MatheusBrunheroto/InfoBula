@@ -15,6 +15,6 @@
 
 
 |**Eloá Rios de Freitas**|           |
-|-------------------|-----------|-----------------------------|
+|-------------------|-----------|
 <img src="../img/Persona_3.png" width="200" height="200"/>|**Idade:** 21 anos. **Naturalidade:** Belo Horizonte - Minas Gerais. **Ocupação:** Estudante de Direito.
 |**Descrição:** Nascida com glaucoma, teve seu quadro agravado conforme os anos. Apesar disso, estuda e sonha em exercer sua profissão.  | **Demanda:** Tem dificuldade de leitura das pequenas letras, como as das bulas convencionais que vem com os remédios. Também cita que os sites que descrevem bulas trazem informações variadas, porém não unificadas.
