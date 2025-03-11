@@ -1,4 +1,4 @@
-# Jornada do Usuário: Pesquisa de Medicamento
+# Jornada do Usuário: Pesquisa de Bula de Remédio 
 
 ## Passo a Passo do Usuário
 1. **Pesquisa pelo nome do remédio**  
@@ -11,7 +11,7 @@
    O usuário é redirecionado para a página detalhada do medicamento, onde pode visualizar informações sobre o remédio, como composição, indicações, efeitos colaterais, entre outros.
 
 4. **Recebimento de Resultados**  
-   O usuário recebe as informações que procurou de maneira clara e concisa, com a possibilidade de explorar mais detalhes, como avaliações de outros usuários e interações com o produto.
+   O usuário recebe as informações que procurou de maneira clara e concisa.
 
 ---
 
@@ -23,8 +23,7 @@
   O usuário tem dúvidas sobre a confiabilidade das informações e pode procurar por fontes secundárias ou querer ver avaliações de outros usuários.
 
 - **Não vou ler a bula inteira, apenas informações específicas**  
-  O usuário busca uma experiência eficiente, sem precisar ler a bula completa, mas com as informações essenciais acessíveis de maneira direta.
-
+  O usuário busca uma experiência eficiente, a bula apresentará essas informações com base nos dados do usuário.
 ---
 
 ## Atividades Necessárias
