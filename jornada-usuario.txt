@@ -1,0 +1,9 @@
+passo a passo do usuário - pesquisa pelo nome do remédio, filtragem do produto, página do item (sobre o remédio), receber resultados
+
+sentimentos e expectativas - será que é fácil?, será que é confiável?, não vou ler a bula do remédio inteira (apenas informações específicas)
+
+atividades necessárias - busca de itens, página de informações
+
+recursos necessários - filtragem, dados da bula do item 
+
+oportunidades de melhoria - expandir informações de sintomas, avaliações (experiência de usuário)
