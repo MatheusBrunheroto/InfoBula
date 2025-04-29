@@ -46,7 +46,7 @@ Iniciaremos com idosos entre 60 e 80 anos, que frequentemente enfrentam dificuld
 ### Cronograma para 3 meses
 - 15 dias para separação dos dados das bulas
 - 1 mês para filtração das bulas em um banco de dados
-- 1 mês e meio para o desenvolvimento do front-end
+- 1 mês para o desenvolvimento do front-end
 
 ### Prazo:
 - Desenvolvimento: 3 meses
