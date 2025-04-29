@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InfoBula - Sistema de Bulas Online</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-light: #3b82f6;
+            --secondary: #10b981;
+            --light: #f3f4f6;
+            --dark: #1f2937;
+            --gray: #9ca3af;
+            --danger: #ef4444;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9fafb;
+            color: var(--dark);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        header {
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .logo-icon {
+            background-color: var(--primary);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        
+        nav a:hover {
+            color: var(--primary);
+        }
+        
+        .hero {
+            background-color: var(--primary);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .search-box {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 8px;
+            padding: 0.5rem;
+            display: flex;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .search-box input {
+            flex: 1;
+            padding: 0.75rem;
+            border: none;
+            outline: none;
+            font-size: 1rem;
+        }
+        
+        .search-box button {
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 0.75rem 1.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+        
+        .search-box button:hover {
+            background-color: #0da271;
+        }
+        
+        .features {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+            color: var(--dark);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .feature-icon {
+            background-color: var(--light);
+            color: var(--primary);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        .popular-categories {
+            padding: 3rem 0;
+            background-color: var(--light);
+        }
+        
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .category-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .category-image {
+            height: 150px;
+            background-color: #e5e7eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray);
+        }
+        
+        .category-content {
+            padding: 1.5rem;
+        }
+        
+        .category-content h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .category-content p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .recent-searches {
+            padding: 3rem 0;
+        }
+        
+        .recent-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        
+        .recent-item {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: background-color 0.2s;
+            cursor: pointer;
+        }
+        
+        .recent-item:hover {
+            background-color: var(--light);
+        }
+        
+        .recent-icon {
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 0;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .footer-logo-icon {
+            background-color: white;
+            color: var(--primary);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+        }
+        
+        .footer-links h4 {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-links a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            nav ul {
+                gap: 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">Rx</div>
+                    InfoBula
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#">Início</a></li>
+                        <li><a href="#">Categorias</a></li>
+                        <li><a href="#">Sobre</a></li>
+                        <li><a href="#">Contato</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h1>Encontre informações de medicamentos em segundos</h1>
+            <p>O InfoBula oferece acesso rápido e fácil às bulas de medicamentos, informações de dosagens e possíveis interações medicamentosas.</p>
+            
+            <div class="search-box">
+                <input type="text" placeholder="Digite o nome do medicamento...">
+                <button>Pesquisar</button>
+            </div>
+        </div>
+    </section>
+    
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Por que usar o InfoBula?</h2>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Busca Inteligente</h3>
+                    <p>Encontre medicamentos com facilidade através do nome comercial ou princípio ativo.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📄</div>
+                    <h3>Bulas Completas</h3>
+                    <p>Acesse todas as informações necessárias sobre os medicamentos em um só lugar.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">⬇️</div>
+                    <h3>Download em PDF</h3>
+                    <p>Baixe as bulas para consulta offline ou para compartilhar com outras pessoas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="popular-categories">
+        <div class="container">
+            <h2 class="section-title">Categorias Populares</h2>
+            
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="/api/placeholder/300/150" alt="Anti-inflamatórios">
+                    </div>
+                    <div class="category-content">
+                        <h3>Anti-inflamatórios</h3>
+                        <p>Medicamentos para dor e inflamação</p>
+                    </div>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="/api/placeholder/300/150" alt="Antibióticos">
+                    </div>
+                    <div class="category-content">
+                        <h3>Antibióticos</h3>
+                        <p>Combate a infecções bacterianas</p>
+                    </div>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="/api/placeholder/300/150" alt="Antialérgicos">
+                    </div>
+                    <div class="category-content">
+                        <h3>Antialérgicos</h3>
+                        <p>Alívio de sintomas alérgicos</p>
+                    </div>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="/api/placeholder/300/150" alt="Cardiológicos">
+                    </div>
+                    <div class="category-content">
+                        <h3>Cardiológicos</h3>
+                        <p>Saúde do coração e sistema circulatório</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="recent-searches">
+        <div class="container">
+            <h2 class="section-title">Buscas Recentes</h2>
+            
+            <div class="recent-list">
+                <div class="recent-item">
+                    <div class="recent-icon">💊</div>
+                    <span>Dipirona</span>
+                </div>
+                
+                <div class="recent-item">
+                    <div class="recent-icon">💊</div>
+                    <span>Amoxicilina</span>
+                </div>
+                
+                <div class="recent-item">
+                    <div class="recent-icon">💊</div>
+                    <span>Omeprazol</span>
+                </div>
+                
+                <div class="recent-item">
+                    <div class="recent-icon">💊</div>
+                    <span>Paracetamol</span>
+                </div>
+                
+                <div class="recent-item">
+                    <div class="recent-icon">💊</div>
+                    <span>Loratadina</span>
+                </div>
+                
+                <div class="recent-item">
+                    <div class="recent-icon">💊</div>
+                    <span>Ibuprofeno</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <div class="footer-logo-icon">Rx</div>
+                        InfoBula
+                    </div>
+                    <p>Sistema de consulta de bulas online, facilitando o acesso à informação sobre medicamentos de forma rápida e confiável.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="#">Início</a></li>
+                        <li><a href="#">Categorias</a></li>
+                        <li><a href="#">Buscar Medicamentos</a></li>
+                        <li><a href="#">Sobre</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Suporte</h4>
+                    <ul>
+                        <li><a href="#">Contato</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Política de Privacidade</a></li>
+                        <li><a href="#">Termos de Uso</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                &copy; 2025 InfoBula - Sistema de Bulas Online. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
