@@ -1,7 +1,8 @@
 # Canvas MVP – Site "InfoBula"
 
 ## 1. Proposta do MVP
-Desenvolver uma plataforma que simplifique a leitura de bulas de remédios, permitindo que os usuários filtrem as informações de acordo com características pessoais, como gênero, idade e condições de saúde. O objetivo é tornar as bulas mais acessíveis e compreensíveis, especialmente para pessoas com deficiências visuais, cognitivas ou dificuldades de leitura.
+Desenvolver uma plataforma que simplifique a leitura de bulas de remédios, inacessibilidade referente as bulas de fármacos, ocasionando a não compreensão dos efeitos colaterais, a falta de clareza dos componentes, podendo levar a problemas mais graves como o não consumo de medicamentos necessários ou o consumo
+indevido.
 
 ## 2. Personas Segmentadas
 ### Público-alvo:
