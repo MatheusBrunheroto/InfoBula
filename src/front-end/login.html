@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>infoBula - Login e Cadastro</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 100%;
+            max-width: 900px;
+            min-height: 600px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        @media (min-width: 768px) {
+            .container {
+                flex-direction: row;
+            }
+        }
+        
+        .info-section {
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            color: white;
+            padding: 40px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+        
+        .logo-accent {
+            color: #93c5fd;
+        }
+        
+        .divider {
+            width: 60px;
+            height: 4px;
+            background: #93c5fd;
+            border-radius: 2px;
+            margin-bottom: 30px;
+        }
+        
+        .feature {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+        
+        .feature-number {
+            width: 35px;
+            height: 35px;
+            background: #3b82f6;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .feature-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        
+        .feature-content p {
+            color: #93c5fd;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+        
+        .form-section {
+            padding: 40px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .form-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .form-header h2 {
+            font-size: 2rem;
+            color: #1f2937;
+            margin-bottom: 10px;
+        }
+        
+        .form-header p {
+            color: #6b7280;
+        }
+        
+        .tab-switcher {
+            display: flex;
+            background: #f3f4f6;
+            border-radius: 10px;
+            padding: 4px;
+            margin-bottom: 30px;
+        }
+        
+        .tab-button {
+            flex: 1;
+            padding: 12px;
+            background: none;
+            border: none;
+            border-radius: 8px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #6b7280;
+        }
+        
+        .tab-button.active {
+            background: white;
+            color: #2563eb;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #374151;
+        }
+        
+        .input-wrapper {
+            position: relative;
+        }
+        
+        .input-wrapper input {
+            width: 100%;
+            padding: 15px 20px 15px 50px;
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+        
+        .input-wrapper input:focus {
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        
+        .input-icon {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #9ca3af;
+            width: 20px;
+            height: 20px;
+        }
+        
+        .password-toggle {
+            position: absolute;
+            right: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #9ca3af;
+            cursor: pointer;
+            padding: 0;
+            width: 20px;
+            height: 20px;
+        }
+        
+        .checkbox-wrapper {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        
+        .checkbox-wrapper input[type="checkbox"] {
+            margin-right: 10px;
+            width: 18px;
+            height: 18px;
+        }
+        
+        .checkbox-wrapper label {
+            margin-bottom: 0;
+            font-size: 14px;
+            color: #6b7280;
+        }
+        
+        .submit-button {
+            width: 100%;
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        
+        .submit-button:hover {
+            transform: translateY(-2px);
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .forgot-password {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .forgot-password a {
+            color: #2563eb;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Ícones SVG */
+        .icon {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Seção de informações -->
+        <div class="info-section">
+            <div class="logo">
+                info<span class="logo-accent">Bula</span>
+            </div>
+            <div class="divider"></div>
+            
+            <div class="feature">
+                <div class="feature-number">1</div>
+                <div class="feature-content">
+                    <h3>Informações Precisas</h3>
+                    <p>Acesse informações detalhadas sobre medicamentos de forma rápida e confiável.</p>
+                </div>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-number">2</div>
+                <div class="feature-content">
+                    <h3>Segurança Garantida</h3>
+                    <p>Seus dados estão protegidos com os mais altos padrões de segurança.</p>
+                </div>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-number">3</div>
+                <div class="feature-content">
+                    <h3>Fácil de Usar</h3>
+                    <p>Interface intuitiva para profissionais de saúde e pacientes.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Seção do formulário -->
+        <div class="form-section">
+            <div class="form-header">
+                <h2 id="form-title">Bem-vindo de volta!</h2>
+                <p id="form-subtitle">Faça login para acessar sua conta</p>
+            </div>
+            
+            <!-- Alternador de abas -->
+            <div class="tab-switcher">
+                <button class="tab-button active" onclick="switchTab('login')">Login</button>
+                <button class="tab-button" onclick="switchTab('register')">Cadastro</button>
+            </div>
+            
+            <!-- Formulário de Login -->
+            <form id="login-form" onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label for="login-email">E-mail</label>
+                    <div class="input-wrapper">
+                        <svg class="input-icon icon" viewBox="0 0 24 24">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                        <input type="email" id="login-email" placeholder="Digite seu e-mail" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="login-password">Senha</label>
+                    <div class="input-wrapper">
+                        <svg class="input-icon icon" viewBox="0 0 24 24">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                            <circle cx="12" cy="16" r="1"/>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                        </svg>
+                        <input type="password" id="login-password" placeholder="Digite sua senha" required>
+                        <button type="button" class="password-toggle" onclick="togglePassword('login-password')">
+                            <svg class="icon" viewBox="0 0 24 24">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                <circle cx="12" cy="12" r="3"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="checkbox-wrapper">
+                    <input type="checkbox" id="remember-me">
+                    <label for="remember-me">Lembrar de mim</label>
+                </div>
+                
+                <button type="submit" class="submit-button">Entrar</button>
+                
+                <div class="forgot-password">
+                    <a href="#" onclick="alert('Funcionalidade de recuperação de senha')">Esqueceu sua senha?</a>
+                </div>
+            </form>
+            
+            <!-- Formulário de Cadastro -->
+            <form id="register-form" class="hidden" onsubmit="handleRegister(event)">
+                <div class="form-group">
+                    <label for="register-name">Nome completo</label>
+                    <div class="input-wrapper">
+                        <svg class="input-icon icon" viewBox="0 0 24 24">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                            <circle cx="12" cy="7" r="4"/>
+                        </svg>
+                        <input type="text" id="register-name" placeholder="Digite seu nome completo" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="register-email">E-mail</label>
+                    <div class="input-wrapper">
+                        <svg class="input-icon icon" viewBox="0 0 24 24">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                        <input type="email" id="register-email" placeholder="Digite seu e-mail" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="register-phone">Telefone</label>
+                    <div class="input-wrapper">
+                        <svg class="input-icon icon" viewBox="0 0 24 24">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                        <input type="tel" id="register-phone" placeholder="(11) 99999-9999" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="register-birthdate">Data de nascimento</label>
+                    <div class="input-wrapper">
+                        <svg class="input-icon icon" viewBox="0 0 24 24">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                            <line x1="16" y1="2" x2="16" y2="6"/>
+                            <line x1="8" y1="2" x2="8" y2="6"/>
+                            <line x1="3" y1="10" x2="21" y2="10"/>
+                        </svg>
+                        <input type="date" id="register-birthdate" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="register-password">Senha</label>
+                    <div class="input-wrapper">
+                        <svg class="input-icon icon" viewBox="0 0 24 24">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                            <circle cx="12" cy="16" r="1"/>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                        </svg>
+                        <input type="password" id="register-password" placeholder="Digite sua senha" required>
+                        <button type="button" class="password-toggle" onclick="togglePassword('register-password')">
+                            <svg class="icon" viewBox="0 0 24 24">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                <circle cx="12" cy="12" r="3"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="register-confirm-password">Confirmar senha</label>
+                    <div class="input-wrapper">
+                        <svg class="input-icon icon" viewBox="0 0 24 24">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                            <circle cx="12" cy="16" r="1"/>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                        </svg>
+                        <input type="password" id="register-confirm-password" placeholder="Confirme sua senha" required>
+                        <button type="button" class="password-toggle" onclick="togglePassword('register-confirm-password')">
+                            <svg class="icon" viewBox="0 0 24 24">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                <circle cx="12" cy="12" r="3"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="checkbox-wrapper">
+                    <input type="checkbox" id="accept-terms" required>
+                    <label for="accept-terms">Aceito os <a href="#" style="color: #2563eb;">termos de uso</a> e <a href="#" style="color: #2563eb;">política de privacidade</a></label>
+                </div>
+                
+                <button type="submit" class="submit-button">Criar conta</button>
+            </form>
+        </div>
+    </div>
+    
+    <script>
+        function switchTab(tab) {
+            const loginForm = document.getElementById('login-form');
+            const registerForm = document.getElementById('register-form');
+            const formTitle = document.getElementById('form-title');
+            const formSubtitle = document.getElementById('form-subtitle');
+            const tabButtons = document.querySelectorAll('.tab-button');
+            
+            // Remove active class from all buttons
+            tabButtons.forEach(button => button.classList.remove('active'));
+            
+            if (tab === 'login') {
+                loginForm.classList.remove('hidden');
+                registerForm.classList.add('hidden');
+                formTitle.textContent = 'Bem-vindo de volta!';
+                formSubtitle.textContent = 'Faça login para acessar sua conta';
+                tabButtons[0].classList.add('active');
+            } else {
+                loginForm.classList.add('hidden');
+                registerForm.classList.remove('hidden');
+                formTitle.textContent = 'Criar conta';
+                formSubtitle.textContent = 'Preencha os dados para se cadastrar';
+                tabButtons[1].classList.add('active');
+            }
+        }
+        
+        function togglePassword(inputId) {
+            const input = document.getElementById(inputId);
+            const button = input.nextElementSibling;
+            
+            if (input.type === 'password') {
+                input.type = 'text';
+                button.innerHTML = `
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/>
+                        <line x1="1" y1="1" x2="23" y2="23"/>
+                    </svg>
+                `;
+            } else {
+                input.type = 'password';
+                button.innerHTML = `
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                        <circle cx="12" cy="12" r="3"/>
+                    </svg>
+                `;
+            }
+        }
+        
+        function handleLogin(event) {
+            event.preventDefault();
+            
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+            
+            // Aqui você faria a validação real
+            console.log('Login:', { email, password });
+            alert('Login realizado com sucesso!');
+        }
+        
+        function handleRegister(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('register-name').value;
+            const email = document.getElementById('register-email').value;
+            const phone = document.getElementById('register-phone').value;
+            const birthdate = document.getElementById('register-birthdate').value;
+            const password = document.getElementById('register-password').value;
+            const confirmPassword = document.getElementById('register-confirm-password').value;
+            
+            if (password !== confirmPassword) {
+                alert('As senhas não coincidem!');
+                return;
+            }
+            
+            // Aqui você faria o cadastro real
+            console.log('Cadastro:', { name, email, phone, birthdate, password });
+            alert('Cadastro realizado com sucesso!');
+        }
+        
+        // Máscara para telefone
+        document.getElementById('register-phone').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length <= 11) {
+                value = value.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
+                if (value.length < 14) {
+                    value = value.replace(/(\d{2})(\d{4})(\d{4})/, '($1) $2-$3');
+                }
+            }
+            e.target.value = value;
+        });
+    </script>
+</body>
+</html>
