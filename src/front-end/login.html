@@ -345,7 +345,7 @@
                     <label for="remember-me">Lembrar de mim</label>
                 </div>
                 
-                <button type="submit" class="submit-button">Entrar</button>
+                <button type="submit" href="/home.html " class="submit-button">Entrar</button>
                 
                 <div class="forgot-password">
                     <a href="#" onclick="alert('Funcionalidade de recuperação de senha')">Esqueceu sua senha?</a>
@@ -396,6 +396,20 @@
                             <line x1="3" y1="10" x2="21" y2="10"/>
                         </svg>
                         <input type="date" id="register-birthdate" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="peso">Seu Peso em Kg</label>
+                    <div class="input-wrapper">
+                        <input type="number" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Digite os remédios que você toma</label>
+                    <div class="input-wrapper">
+                        <input type="text" required>
                     </div>
                 </div>
                 
@@ -500,9 +514,7 @@
             const email = document.getElementById('login-email').value;
             const password = document.getElementById('login-password').value;
             
-            // Aqui você faria a validação real
-            console.log('Login:', { email, password });
-            alert('Login realizado com sucesso!');
+           
         }
         
         function handleRegister(event) {
