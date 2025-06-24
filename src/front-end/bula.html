@@ -394,16 +394,16 @@
             <header>
                 <div class="container">
                     <div class="header-content">
-                        <div class="logo">
-                            <div class="logo-icon">Rx</div>
-                            InfoBula
+                        <div class="footer-logo" >
+                            <a href="home.html">
+                                <img src="logo-infobula.png">
+                            </a>
                         </div>
                         <nav>
                             <ul>
-                                <li><a href="#">Início</a></li>
-                                <li><a href="#">Categorias</a></li>
-                                <li><a href="#">Sobre</a></li>
-                                <li><a href="#">Contato</a></li>
+                                <li><a href="home.html">Início</a></li>
+                                <li><a href="bula.html">Bula</a></li>
+                                <li><a href="produto.html">Produto</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -582,16 +582,15 @@
                     </div>
                 </div>
             </section>
-            
-            <a href="#" class="back-to-top">↑</a>
-            
+                        
             <footer>
                 <div class="container">
                     <div class="footer-content">
                         <div class="footer-about">
-                            <div class="footer-logo">
-                                <div class="footer-logo-icon">Rx</div>
-                                InfoBula
+                            <div class="footer-logo" >
+                                <a href="home.html">
+                                    <img src="logo-infobula.png">
+                                </a>
                             </div>
                             <p>Sistema de consulta de bulas online, facilitando o acesso à informação sobre medicamentos de forma rápida e confiável.</p>
                         </div>
@@ -599,22 +598,11 @@
                         <div class="footer-links">
                             <h4>Links Rápidos</h4>
                             <ul>
-                                <li><a href="#">Início</a></li>
-                                <li><a href="#">Categorias</a></li>
-                                <li><a href="#">Buscar Medicamentos</a></li>
-                                <li><a href="#">Sobre</a></li>
+                                <li><a href="home.html">Início</a></li>
+                                <li><a href="bula.html">Bula</a></li>
                             </ul>
                         </div>
-                        
-                        <div class="footer-links">
-                            <h4>Suporte</h4>
-                            <ul>
-                                <li><a href="#">Contato</a></li>
-                                <li><a href="#">FAQ</a></li>
-                                <li><a href="#">Política de Privacidade</a></li>
-                                <li><a href="#">Termos de Uso</a></li>
-                            </ul>
-                        </div>
+                
                     </div>
                     
                     <div class="copyright">
@@ -704,9 +692,10 @@
         header {
             background-color: white;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            position: sticky;
+            /* position: sticky; */
             top: 0;
             z-index: 100;
+            height: 100px;
         }
         
         .header-content {
@@ -1053,7 +1042,7 @@
     </style>
 </head>
 <body>
-    <header>
+    <!-- <header>
         <div class="container">
             <div class="header-content">
                 <div class="logo">
@@ -1070,221 +1059,21 @@
                 </nav>
             </div>
         </div>
-    </header>
+    </header> -->
     
-    <section class="breadcrumbs">
-        <div class="container">
-            <ul>
-                <li><a href="#">Início</a></li>
+                <!-- <li><a href="#">Início</a></li>
                 <li class="separator">/</li>
                 <li><a href="#">Analgésicos</a></li>
                 <li class="separator">/</li>
                 <li><a href="#">Dipirona</a></li>
                 <li class="separator">/</li>
                 <li class="active">Bula</li>
-            </ul>
-        </div>
-    </section>
-    
-    <section class="bula-header">
-        <div class="container">
-            <div class="bula-title">
-                <div>
-                    <h1>Dipirona Sódica</h1>
-                    <div class="bula-subtitle">Bula completa do medicamento</div>
-                </div>
-                <a href="#" class="download-btn">
-                    <span>Download PDF</span>
-                    <span>⬇️</span>
-                </a>
-            </div>
-        </div>
-    </section>
-    
-    <section class="container bula-container">
-        <div class="bula-sidebar">
-            <div class="sidebar-nav">
-                <div class="sidebar-nav-title">Índice da Bula</div>
-                <ul>
-                    <li><a href="#identificacao" class="active">Identificação do Medicamento</a></li>
-                    <li><a href="#informacoes-paciente">Informações ao Paciente</a></li>
-                    <li><a href="#para-que-serve">Para que este medicamento é indicado?</a></li>
-                    <li><a href="#como-funciona">Como este medicamento funciona?</a></li>
-                    <li><a href="#contra-indicacoes">Quando não devo utilizar?</a></li>
-                    <li><a href="#advertencias">O que devo saber antes de usar?</a></li>
-                    <li><a href="#como-usar">Como devo usar este medicamento?</a></li>
-                    <li><a href="#efeitos-adversos">Quais os males que pode causar?</a></li>
-                    <li><a href="#superdose">O que fazer em caso de superdose?</a></li>
-                    <li><a href="#armazenamento">Armazenamento</a></li>
-                    <li><a href="#composicao">Composição</a></li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="bula-content">
-            <div id="identificacao" class="bula-section">
-                <h2>Identificação do Medicamento</h2>
-                <p><strong>Nome comercial:</strong> Varia conforme o fabricante</p>
-                <p><strong>Nome genérico:</strong> Dipirona Sódica</p>
-                <p><strong>Forma farmacêutica:</strong> Comprimido, Solução oral, Solução injetável</p>
-                <p><strong>Apresentações:</strong> Comprimidos de 500mg e 1g; Solução oral (gotas) 500mg/mL; Solução injetável 500mg/mL</p>
-                <p><strong>Uso oral ou injetável</strong></p>
-                <p><strong>Uso adulto e pediátrico acima de 3 meses de idade</strong></p>
-            </div>
-            
-            <div id="informacoes-paciente" class="bula-section">
-                <h2>Informações ao Paciente</h2>
-                <div class="info-box">
-                    <p>Leia atentamente esta bula antes de iniciar o tratamento com este medicamento. Ela contém informações importantes sobre o seu tratamento. Se tiver dúvidas, procure orientação do seu médico ou farmacêutico.</p>
-                </div>
-            </div>
-            
-            <div id="para-que-serve" class="bula-section">
-                <h2>Para que este medicamento é indicado?</h2>
-                <p>A dipirona é indicada para o tratamento de:</p>
-                <ul>
-                    <li>Dor aguda (pós-operatória, cólica renal, abdominal e outras)</li>
-                    <li>Dor crônica (dor de cabeça, dor nas costas e outras)</li>
-                    <li>Febre</li>
-                </ul>
-            </div>
-            
-            <div id="como-funciona" class="bula-section">
-                <h2>Como este medicamento funciona?</h2>
-                <p>A dipirona é um medicamento analgésico (alivia a dor) e antitérmico (combate a febre). Seu efeito se inicia entre 30 a 60 minutos após a administração e geralmente dura aproximadamente 4 horas.</p>
-            </div>
-            
-            <div id="contra-indicacoes" class="bula-section">
-                <h2>Quando não devo utilizar este medicamento?</h2>
-                <div class="warning-box">
-                    <p>Não utilize dipirona se você:</p>
-                </div>
-                <ul>
-                    <li>Tem alergia à dipirona ou a qualquer componente da fórmula</li>
-                    <li>Tem deficiência de uma enzima chamada glicose-6-fosfato desidrogenase</li>
-                    <li>Tem porfiria aguda hepática intermitente (um distúrbio metabólico que afeta o fígado)</li>
-                    <li>Está em tratamento com medicamentos chamados clorpromazina (um tipo de calmante)</li>
-                    <li>Tem problemas na medula óssea ou alterações sanguíneas</li>
-                    <li>Tem pressão baixa ou instabilidade circulatória</li>
-                    <li>Tem menos de 3 meses de idade ou peso inferior a 5kg</li>
-                </ul>
-            </div>
-            
-            <div id="advertencias" class="bula-section">
-                <h2>O que devo saber antes de usar este medicamento?</h2>
-                <h3>Advertências e Precauções</h3>
-                <p>A dipirona pode causar reações alérgicas graves, como choque anafilático. Se você já teve reações alérgicas ou outras reações imunológicas a outros analgésicos, existe um risco aumentado de reações com a dipirona.</p>
-                <p>Pacientes com asma, rinite alérgica, urticária crônica ou intolerância a corantes e conservantes de alimentos têm maior risco de desenvolver reações alérgicas.</p>
-                <div class="warning-box">
-                    <p>A dipirona pode causar agranulocitose (diminuição de células de defesa no sangue). Se você apresentar febre, calafrios, dor de garganta ou lesões na boca durante o tratamento, interrompa imediatamente o uso e procure um médico.</p>
-                </div>
-                <h3>Gravidez e Amamentação</h3>
-                <p>Não utilizar a dipirona durante os primeiros 3 meses da gravidez. Entre o 4º e o 6º mês, só utilizar em caso de absoluta necessidade. A partir do 7º mês, não deve ser utilizada.</p>
-                <p>Durante a amamentação, utilize somente sob orientação médica.</p>
-            </div>
-            
-            <div id="como-usar" class="bula-section">
-                <h2>Como devo usar este medicamento?</h2>
-                <p><strong>Comprimidos:</strong></p>
-                <ul>
-                    <li>Adultos e adolescentes acima de 15 anos: 1 a 2 comprimidos de 500mg até 4 vezes ao dia</li>
-                    <li>Crianças e adolescentes de 10 a 14 anos: 1 comprimido de 500mg até 4 vezes ao dia</li>
-                </ul>
-                <p><strong>Solução oral (gotas):</strong></p>
-                <ul>
-                    <li>Adultos e adolescentes acima de 15 anos: 20 a 40 gotas até 4 vezes ao dia</li>
-                    <li>Crianças de 1 a 14 anos: 1 gota por quilograma de peso até 4 vezes ao dia</li>
-                    <li>Crianças de 3 meses a 1 ano: 1 gota por quilograma de peso até 4 vezes ao dia</li>
-                </ul>
-                <div class="info-box">
-                    <p>O intervalo mínimo entre as doses é de 4 horas. Não exceda a dose máxima diária recomendada.</p>
-                </div>
-            </div>
-            
-            <div id="efeitos-adversos" class="bula-section">
-                <h2>Quais os males que este medicamento pode causar?</h2>
-                <p>As principais reações adversas reportadas incluem:</p>
-                <h3>Reações raras (ocorrem entre 0,01% e 0,1% dos pacientes):</h3>
-                <ul>
-                    <li>Reações anafiláticas/anafilactoides (alérgicas graves)</li>
-                    <li>Agranulocitose (diminuição de células de defesa no sangue)</li>
-                    <li>Síndrome de Stevens-Johnson (erupção cutânea grave)</li>
-                    <li>Necrólise epidérmica tóxica (descamação grave da pele)</li>
-                </ul>
-                <h3>Reações comuns (ocorrem entre 1% e 10% dos pacientes):</h3>
-                <ul>
-                    <li>Hipotensão (pressão baixa)</li>
-                    <li>Náuseas</li>
-                    <li>Vômitos</li>
-                    <li>Boca seca</li>
-                    <li>Reações cutâneas (erupções na pele)</li>
-                </ul>
-            </div>
-            
-            <div id="superdose" class="bula-section">
-                <h2>O que fazer em caso de superdose?</h2>
-                <p>Em caso de superdose, procure imediatamente atendimento médico de emergência.</p>
-                <p>Sintomas de superdose incluem: náuseas, vômitos, dor abdominal, comprometimento da função renal e, em casos mais raros, sintomas do sistema nervoso central (tontura, sonolência, coma, convulsões) e queda da pressão arterial ou até choque.</p>
-            </div>
-            
-            <div id="armazenamento" class="bula-section">
-                <h2>Armazenamento</h2>
-                <p>Conservar em temperatura ambiente (entre 15°C e 30°C), protegido da luz e umidade.</p>
-                <p>O prazo de validade está impresso na embalagem do produto.</p>
-                <div class="info-box">
-                    <p>Não use medicamento com prazo de validade vencido. Guarde-o em sua embalagem original.</p>
-                </div>
-            </div>
-            
-            <div id="composicao" class="bula-section">
-                <h2>Composição</h2>
-                <p><strong>Comprimido de 500mg:</strong> Cada comprimido contém 500mg de dipirona sódica e excipientes.</p>
-                <p><strong>Solução oral (gotas) 500mg/mL:</strong> Cada mL contém 500mg de dipirona sódica e excipientes. Cada gota contém aproximadamente 25mg de dipirona sódica.</p>
-                <p><strong>Solução injetável 500mg/mL:</strong> Cada mL contém 500mg de dipirona sódica e excipientes.</p>
-            </div>
+            </ul> -->
         </div>
     </section>
     
     <a href="#" class="back-to-top">↑</a>
     
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-about">
-                    <div class="footer-logo">
-                        <div class="footer-logo-icon">Rx</div>
-                        InfoBula
-                    </div>
-                    <p>Sistema de consulta de bulas online, facilitando o acesso à informação sobre medicamentos de forma rápida e confiável.</p>
-                </div>
-                
-                <div class="footer-links">
-                    <h4>Links Rápidos</h4>
-                    <ul>
-                        <li><a href="#">Início</a></li>
-                        <li><a href="#">Categorias</a></li>
-                        <li><a href="#">Buscar Medicamentos</a></li>
-                        <li><a href="#">Sobre</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-links">
-                    <h4>Suporte</h4>
-                    <ul>
-                        <li><a href="#">Contato</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Política de Privacidade</a></li>
-                        <li><a href="#">Termos de Uso</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="copyright">
-                &copy; 2025 InfoBula - Sistema de Bulas Online. Todos os direitos reservados.
-            </div>
-        </div>
-    </footer>
-
     <script>
         // Script para funcionalidade de rolagem suave para os links da bula
         document.querySelectorAll('.sidebar-nav a').forEach(anchor => {
